@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spelling Bee Practice Tool</title>
+        <link href="C:\Users\test\Downloads\spelling-bee-tool\style.css" rel="stylesheet">
+        <style>
+        body {
+            background-color: yellow;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        
+        input {
+            min-width: 500px;
+        }
+        
+        button {
+            margin-top: 20px;
+        }
+        
+        li {
+            list-style-type: none;
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Spelling Bee Practice Tool</h1>
+            <button>difficulty 1 (really easy) = 1st and 2nd columns of 1st page</button>
+            <button>difficulty 2 (easy) = 3rd and 4th columns of 1st page</button>
+            <button>difficulty 3 (kinda easy) = 1st and 2nd columns of 2nd page</button>
+            <button>difficulty 4 (medium) = 3rd and 4th columns of 2nd page</li>
+            <button>difficulty 5 (little hard) = 1st and 2nd columns of 3rd page</button>
+            <button>difficulty 6 (hard) = 3rd and 4th columns of 3rd page</button>
+            <button>difficulty 7 (really hard) = 4th page</button>
+        <p>Good luck in the spelling bee!</p>
+        <script>
+        var wordBtn = document.querySelector('button')
+
+            var dif1 = ['deep', 'happy', 'bump', 'bear', 'count', 'dunk', 'feet', 'cold', 'alone', 'click', 'miss', 'shirt', 'roof', 'here', 'lamp',
+                'lost', 'lunch', 'drift', 'please', 'spill', 'tired', 'large', 'lake', 'grab', 'juice', 'nook', 'shops', 'spot', 'world',
+                'math', 'pick', 'soap', 'tools', 'green', 'muddy', 'ripe', 'sign', 'soup', 'warm', 'fresh', 'learn', 'frosty', 'crisp', 'shape', 
+                'splash', 'mushy', 'group', 'spine', 'straps', 'feast', 'eagle', 'berries', 'caves', 'blanket', 'catch', 'updo', 'mule',
+                'glow', 'quick', 'cotton', 'seats', 'baseball', 'great', 'playground', 'monster', 'enjoy', 'jazzy', 'jeans'
+            ]
+            var dif1msg =  new SpeechSynthesisUtterance()
+            const speechSynthesis = window.speechSynthesis
+            
+            function randomDif1word() {
+                return dif1[JSON.stringify(Math.floor(Math.random()*dif1.length))]
+            }
+            
+            dif1msg.text = randomDif1word()
+            
+            wordBtn.addEventListener('click', function() {
+                dif1msg.text = randomDif1word()
+                speechSynthesis.speak(dif1msg)
+            })
+            
+            </script>
+    </body>
+</html>
