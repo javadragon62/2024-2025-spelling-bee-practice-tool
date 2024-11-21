@@ -1,3 +1,4 @@
+#What This Is
 This is a tool to help practice for the Word Club 2024-2025 Spelling Bee.
 I've only added the first difficulty so far but I will add more soon.
 
